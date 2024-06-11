@@ -9,30 +9,32 @@ using namespace std;
 
 class book
 {
-    // This class contains info about the book's title and author, and the methods to set and get the book details, and a method to display book details 
+    // Member variables to store the book's title and author
     private :
         string title;
         string author;
 
     public :
+        // Setter function to set the book's title and author
         void set_details(string title, string author)
         {
             this->title = title;
             this->author = author;
         }
         
+        // Getter function to retrieve the book's title and author
         void get_details(string& title, string& author)
         {
             title = this->title;
             author = this->author;
         }
 
+        // Function to display the book's information
         void displayBookInfo()
         {
-            cout << setw(10) << left << "Title : " << title << endl;
-            cout << setw(10) << left << "Author : " << author << endl;
+            cout << setw(10) << right << "Title : " << title << endl;
+            cout << setw(10) << right << "Author : " << author << endl;
         }
-
 };
 
 class library : private book
@@ -41,19 +43,25 @@ class library : private book
         string libId;
 
     public :
+        // Default constructor to initialize the library ID
         library()
         {
             
         }
 
+        // Function to display the book's information with the library ID
         void displayBookInfo()
         {
-            cout << setw(10) << left << "Book LibID : " << libId << endl;
+            // Display the library ID
+            cout << setw(10) << right << "Book LibID : " << libId << endl;
+            
+            // Call the base class's displayBookInfo function to display the book's title and author
             book::displayBookInfo();
         }
 };
 
 int main()
 {
-
+    // Main function to test the program
+    return 0;
 }
